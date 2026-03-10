@@ -1,15 +1,10 @@
 public class Archer extends Character {
 
-    public Archer(String name, int level) {
-        super(name, level);
+    public Archer(String name, int age, boolean gender) {
+        super(name, age, "Archer", gender);
     }
 
-    @Override
     public void attack() {
-        System.out.println(name + " shoots an arrow!");
-    }
-
-    public void attack(int arrows) {
-        System.out.println(name + " shoots " + arrows + " arrows!");
+        System.out.println("Archer shoots an arrow!");
     }
 }

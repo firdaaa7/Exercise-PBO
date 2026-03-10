@@ -1,15 +1,10 @@
 public class Warrior extends Character {
 
-    public Warrior(String name, int level) {
-        super(name, level);
+    public Warrior(String name, int age, boolean gender) {
+        super(name, age, "Warrior", gender);
     }
 
-    @Override
     public void attack() {
-        System.out.println(name + " swings sword!");
-    }
-
-    public void attack(String move) {
-        System.out.println(name + " uses " + move);
+        System.out.println("Warrior swings sword!");
     }
 }

@@ -1,11 +1,10 @@
 public class Mage extends Character {
 
-    public Mage(String name, int level) {
-        super(name, level);
+    public Mage(String name, int age, boolean gender) {
+        super(name, age, "Mage", gender);
     }
 
-    @Override
     public void attack() {
-        System.out.println(name + " casts magic!");
+        System.out.println("Mage casts magic!");
     }
 }

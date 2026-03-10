@@ -1,17 +1,84 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Archer a = new Archer("Archer", 5);
-        Mage m = new Mage("Mage", 7);
-        Warrior w = new Warrior("Warrior", 6);
+        Scanner input = new Scanner(System.in);
+        int choice;
 
-        a.attack();
-        a.attack(3);
+        do {
 
-        m.attack();
+            System.out.println("\n=== Hero Creator ===");
+            System.out.println("1. Create Archer");
+            System.out.println("2. Create Mage");
+            System.out.println("3. Create Warrior");
+            System.out.println("4. Exit");
+            System.out.print("Choose hero class: ");
 
-        w.attack();
-        w.attack("Power Slash");
+            choice = input.nextInt();
+            input.nextLine();
+
+            switch (choice) {
+
+                case 1:
+
+                    System.out.print("Enter Name: ");
+                    String name = input.nextLine();
+
+                    System.out.print("Enter Age: ");
+                    int age = input.nextInt();
+
+                    System.out.print("Is Female? (true/false): ");
+                    boolean gender = input.nextBoolean();
+
+                    Archer archer = new Archer(name, age, gender);
+                    archer.showData();
+                    archer.attack();
+                    break;
+
+                case 2:
+
+                    System.out.print("Enter Name: ");
+                    name = input.nextLine();
+
+                    System.out.print("Enter Age: ");
+                    age = input.nextInt();
+
+                    System.out.print("Is Female? (true/false): ");
+                    gender = input.nextBoolean();
+
+                    Mage mage = new Mage(name, age, gender);
+                    mage.showData();
+                    mage.attack();
+                    break;
+
+                case 3:
+
+                    System.out.print("Enter Name: ");
+                    name = input.nextLine();
+
+                    System.out.print("Enter Age: ");
+                    age = input.nextInt();
+
+                    System.out.print("Is Female? (true/false): ");
+                    gender = input.nextBoolean();
+
+                    Warrior warrior = new Warrior(name, age, gender);
+                    warrior.showData();
+                    warrior.attack();
+                    break;
+
+                case 4:
+                    System.out.println("Program End.");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice.");
+            }
+
+        } while (choice != 4);
+
+        input.close();
     }
 }
