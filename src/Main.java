@@ -28,9 +28,10 @@ public class Main {
 
                     System.out.print("Enter Age: ");
                     int age = input.nextInt();
+                    input.nextLine();
 
-                    System.out.print("Is Female? (true/false): ");
-                    boolean gender = input.nextBoolean();
+                    System.out.print("Gender (MALE/FEMALE): ");
+                    Gender gender = Gender.valueOf(input.nextLine().toUpperCase());
 
                     Archer archer = new Archer(name, age, gender);
                     archer.showData();
@@ -44,13 +45,15 @@ public class Main {
 
                     System.out.print("Enter Age: ");
                     age = input.nextInt();
+                    input.nextLine();
 
-                    System.out.print("Is Female? (true/false): ");
-                    gender = input.nextBoolean();
+                    System.out.print("Gender (MALE/FEMALE): ");
+                    gender = Gender.valueOf(input.nextLine().toUpperCase());
 
                     Mage mage = new Mage(name, age, gender);
                     mage.showData();
                     mage.attack();
+                    mage.useUltimateAbility();
                     break;
 
                 case 3:
@@ -60,9 +63,10 @@ public class Main {
 
                     System.out.print("Enter Age: ");
                     age = input.nextInt();
+                    input.nextLine();
 
-                    System.out.print("Is Female? (true/false): ");
-                    gender = input.nextBoolean();
+                    System.out.print("Gender (MALE/FEMALE): ");
+                    gender = Gender.valueOf(input.nextLine().toUpperCase());
 
                     Warrior warrior = new Warrior(name, age, gender);
                     warrior.showData();
