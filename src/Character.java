@@ -6,6 +6,11 @@ public abstract class Character {
     private final Gender gender;
 
     public Character(String name, int age, String heroClass, Gender gender) {
+
+        if (name.isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be empty.");
+        }
+
         this.name = name;
         this.age = age;
         this.heroClass = heroClass;
@@ -21,6 +26,5 @@ public abstract class Character {
         System.out.println("Gender: " + gender);
     }
 
-    // abstract method (forces child class)
     public abstract void attack();
 }
